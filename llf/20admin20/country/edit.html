@@ -1,0 +1,42 @@
+[showif [replacevar]=yes]
+[replace db=../../databases/country.db&eqSKUdata=[skuvar]]title=[title]&title=[title]&code=[code][/replace]
+[redirect index.html]
+[/showif]
+
+
+
+
+[search db=../../databases/country.db&eqSKUdata=[skuvar]] 
+[founditems]
+<h1>Country Edit Form</h1>
+<form method="post" action="[thisurl]">
+<input type="hidden" name="skuvar" value="[sku]">
+<input type="hidden" name="replacevar" value="yes">
+
+
+Country Name: <input type="title" name="title" value="[title]"><br>
+
+<br>Country: 
+[search db=../../databases/country.db&neSKUdata=[fa]] 
+<select name="title">
+[founditems]
+<option value="[sku]" [showif [title]=[sku]]selected[/showif]>[title]</option>
+[/founditems]
+</select>
+[/search]
+
+<br><br>
+
+
+[showif [sku]=[title]] <option value="[sku]" selected> [title] </option> [/showif]
+[showif [sku]![title]] <option value="[sku]"> [title] </option> [/showif] 
+
+
+
+<input type="submit" value="Edit Country">
+
+
+ </form>
+[/founditems]
+[/search]
+

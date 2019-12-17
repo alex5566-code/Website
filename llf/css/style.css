@@ -1,0 +1,263 @@
+body {
+background:  #c67727;
+font-family: sans-serif;
+}
+
+h1 {
+text-align: center;
+color: #ff8c00;
+margin: 30px 0 50px;
+}
+page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+  text-align: center;
+}
+
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #c67727;
+  color: black;
+  font-size: 30px;
+  }
+  
+  /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.galleryicons img{
+height: 300px;
+width: 300px;
+ 
+}
+
+
+.divhead 
+{
+	color: #7A5753;
+	float: center;
+	text-align: left;
+	padding-left: 20px;
+	
+}
+
+.divnav 
+{
+	background-color: green;
+	text-align: left;
+
+}
+.sep
+{
+	float:right;
+	padding: 5px 5px 0px 5px;
+}
+
+.divside 
+{
+	background-color: yellow;
+	width: 250px;
+	float: left;
+	background-image: url("/cc18/cm/llf/images/spooder.jpg");
+	background-repeat: no-repeat;
+	background-position: -850px -10px; 
+	height: 100%;  
+	overflow: scroll;
+	padding: 10px;
+	
+
+}
+
+.divbody 
+{
+	width: auto;
+	float: center;
+	height:  100%;
+	overflow: scroll;
+	padding: 10px;
+	
+	
+
+}
+
+.divfoot 
+{
+	background-color: #333;
+	width: 100%;
+	float: center;
+	padding: 10px;
+	left:0px;
+   bottom:0px;
+   margin: 0px;
+   height: 65px;
+
+}
+
+.divgal
+{
+	background-color: black;
+	width: 75%;
+	float: right;
+}	
+
+.divindent
+{
+	text-indent: 40px;
+}
+
+/* NAV BAR */
+
+ul 
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li 
+{
+    float: left;
+}
+
+li a 
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover 
+{
+    background: linear-gradient(to bottom, #B6917C 0%, #5E363B 100%);;
+}
+
+
+
+/* Button */
+
+button
+{
+	background: none;
+	color: #B6917C;
+	width: 240px;
+	height: 80px;
+	border: 1px solid #B6917C;
+	font-size: 18px;
+	border-radius: 4px;
+	transition: .6s;
+	overflow: hidden;
+	float: left;
+}
+
+button:focus
+{
+	outline: none;
+}
+
+button:before
+{
+	content: '';
+	display: block;
+	position: absolute;
+	background: rgba (255,255,255,.5);
+	width: 60px;
+	height: 100%;
+	left: 0;
+	top: 0;
+	opacity: .5s;
+	
+}
+
+button:after
+{
+	content:'';
+	display: block;
+	position: absolute;
+	background: rgba(255,255,255,.2);
+	width: 30px;
+	height: 100%;
+	left: 30px;
+	top: 0;
+	opacity: 0;
+	
+}
+
+button:hover
+{
+	background: #EDE9E9;
+	cursor: pointer;
+}
+
+
+button a
+{
+	color: #5E363B;
+	text-decoration: none;
+}
+
+
+input.MyButton {
+width: 300px;
+padding: 20px;
+cursor: pointer;
+font-weight: bold;
+font-size: 150%;
+background: #3366cc;
+color: #fff;
+border: 1px solid #3366cc;
+border-radius: 10px;
+-moz-box-shadow:: 6px 6px 5px #999;
+-webkit-box-shadow:: 6px 6px 5px #999;
+box-shadow:: 6px 6px 5px #999;
+}
+input.MyButton:hover {
+color: #ffff00;
+background: #000;
+border: 1px solid #fff;
+}
+

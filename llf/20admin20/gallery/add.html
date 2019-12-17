@@ -1,0 +1,11 @@
+[showif [appendvar]=yes]
+[append db=../../databases/gallery.db&autonumber=sku]title=[imagename][/append]
+[redirect index.html]
+[/showif]
+[search db=../../databases/gallery.db&autonumber=sku]
+<h1>Image Add Form</h1>
+<form method="post" action="[thisurl]">
+<input type="hidden" name="appendvar" value="yes">
+Image Name: <input type="text" name="imagename"><br>
+<input type="submit" value="Add New Image">
+</form>

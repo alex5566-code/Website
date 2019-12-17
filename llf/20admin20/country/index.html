@@ -1,0 +1,19 @@
+[include file=../../includes/header.inc]
+[include file=../../includes/nav.inc]
+[showif [action]=del]
+	[delete db=[mydb]country.db&eqskudata=[skuvar]]
+	[redirect [thisurl]]
+	[/showif]
+
+[search db=[mydb]country.db&neSKUdata=FA]
+[numfound] Records Found <br>
+
+<a href="add.html">Add New Record</a><br>
+<table border=1>
+<tr><td>SKU</td><td>Title</td></tr>
+[founditems]
+<tr><rd>[SKU]</td><td>[Title]</td><td><a href="edit.html?skuvar=[sku]">Edit</a></td><td><a href="[thisurl]?action=del&skuvar=[sku]">Delete</a></td></tr>
+[/founditems]
+</table> 
+[/search]
+[flushdatabases]

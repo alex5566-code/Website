@@ -1,0 +1,11 @@
+[showif [appendvar]=yes]
+[append db=../../databases/blog.db&autonumber=sku]title=[Blogname][/append]
+[redirect index.html]
+[/showif]
+
+<h1>Blog Add Form</h1>
+<form method="post" action="[thisurl]">
+<input type="hidden" name="appendvar" value="yes">
+Blog Name: <input type="text" name="Blogname"><br>
+<input type="submit" value="Add New Blog">
+</form>

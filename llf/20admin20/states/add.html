@@ -1,0 +1,26 @@
+[showif [appendvar]=yes]
+[append db=../../databases/states.db&autonumber=sku]title=[statename]&r_country=[r_country]&code=[code][/append]
+[redirect index.html]
+[/showif]
+
+
+<h1>States Add Form</h1>
+<form method="post" action="[thisurl]">
+<input type="hidden" name="appendvar" value="yes">
+State Name: <input type="text" name="statename"><br>
+
+State Code: <input type="text" name="code"><br>
+
+
+<br>Country: 
+[search db=../../databases/country.db&neSKUdata=[fa]] 
+<select name="r_country">
+[founditems]
+<option value="[sku]" [showif [r_country]=[sku]]selected[/showif]>[title]</option>
+[/founditems]
+</select>
+[/search]
+<br><br>
+
+<input type="submit" value="Add New State">
+</form>

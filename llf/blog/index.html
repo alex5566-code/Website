@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	[include file=/citi/coding/2020/ad/llf/includes/head.inc]
+</head>
+<body>
+	[include file=/citi/coding/2020/ad/llf/includes/nav.inc]
+	[include file=/citi/coding/2020/ad/llf/includes/adminnav.inc]	
+
+[!] update=code 
+SKU	title	r_images	r_member	status	caption	datecreated	timecreated	bodycopy
+ [/!]
+ 
+ 
+[showif [action]=add]
+ [append db=/citi/coding/2020/ad/llf/databases/blog/blog.db&autonumber=sku]&title=[title]&r_images=[r_images]&r_member=[membervar]&status=[status]&datecreated=[date]&timecreated=[time]&caption=[url][caption][/url]&bodycopy=[url][bodycopy][/url][/append]
+[redirect index.html]
+[/showif]
+ 
+ 
+ [!] Form Code [/!]
+ 
+ <style>
+
+.psel {
+ 	background-color: black;
+ 	width:100%;
+ 	color: white;
+ 	padding: 14px 20px;
+ 	}
+ 	
+ .pscroll {
+ 	width: 85%; 
+ 	height: 400px; 
+ 	overflow: scroll;
+ 	border: solid;
+ 	}
+ 	
+ 	.pscroll2 {
+ 	height: 100px; 
+ 	overflow: scroll;
+ 	}
+</style>
+
+
+<form method="post" action="[thisurl]">
+Title:<br>
+<input class="textbox" type="text" name="title" style="width: 400px;"><br>
+status:<br>
+
+<select name="status">
+<option>0</option>
+<option>1</option>
+</select>
+<br>
+
+<br>
+Caption:<br>
+<textarea class="textbox"  name="caption" style="width: 400px; height: 100px;"></textarea><br>
+Bodycopy:<br>
+<textarea class="textbox" name="bodycopy" style="width: 400px; height: 100px;"></textarea><br>
+
+
+<b style="color:black;"></b>
+<a name="postimage">&nbsp;</a>
+
+
+<center><div class="pscroll">
+[search db=/citi/coding/2020/ad/llf/databases/imagecat.db&eqSTATUSdatarq=1&titlesort=1]
+[founditems]
+[text]folder=[title][/text]
+<br><div class="psel">[title]</div><br>
+	[search db=/citi/coding/2020/ad/llf/databases/images.db&eqr_categorydatarq=[sku]&eqSTATUSdatarq=1]
+		[founditems]
+		<a style="padding:0;" href="javascript:void(0)" onclick="javascript:document.getElementById('r_images').value = '[sku]'"><img src="/cc18/llfimages/[folder]/[imgurl]" width=80 height=80 /></a>
+		[/founditems]
+	[/search]
+[/founditems]
+[/search]
+
+</div></center>
+
+<input type=text name="r_images" id="r_images" size=20 readonly value=""><br>
+
+<br>
+
+<input type="hidden" name="action" value="add">
+<input type="submit" value="POST" id="POST">
+<input type="hidden" name="skuvar" value="[sku]">
+<input type="hidden" id="POST" name="POST" value="yes">
+
+</form>		
+		
+[include file=/citi/coding/2020/ad/llf/includes/foot.inc]

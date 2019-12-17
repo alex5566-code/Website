@@ -1,0 +1,11 @@
+[showif [appendvar]=yes]
+[append db=../../databases/category.db&autonumber=sku]title=[categoryname][/append]
+[redirect index.html]
+[/showif]
+[search db=../../databases/category.db&autonumber=sku]
+<h1>Category Add Form</h1>
+<form method="post" action="[thisurl]">
+<input type="hidden" name="appendvar" value="yes">
+Category Name: <input type="text" name="categoryname"><br>
+<input type="submit" value="Add New Category">
+</form>

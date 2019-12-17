@@ -1,0 +1,22 @@
+[showif [replacevar]=yes]
+[replace db=../../databases/gallery.db&eqSKUdata=[skuvar]]title=[title]&r_categories=[r_categories]&code=[code][/replace]
+[redirect index.html]
+[/showif]
+[search db=../../databases/gallery.db&eqSKUdata=[skuvar]] 
+[founditems]
+
+<h1>Gallery Edit Form</h1>
+<form method="post" action="[thisurl]">
+<input type="hidden" name="skuvar" value="[sku]">
+<input type="hidden" name="replacevar" value="yes">
+Gallery Name: <input type="title" name="title" value="[title]"><br>
+
+[showif [sku]=[r_categories]] <option value="[sku]" selected> [title] </option> [/showif]
+[showif [sku]![r_categories]] <option value="[sku]"> [title] </option> [/showif] 
+
+
+<input type="submit" value="Edit Gallery">
+</form>
+[/founditems]
+[/search]
+[flushdatabases]

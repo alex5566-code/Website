@@ -1,0 +1,63 @@
+<html>
+<head>
+<title> Gallery </title>
+</head>
+<body>
+
+
+<h1 style="text-align:center;">Gallery</h1>
+<Hr>
+[hideif [action]=detail] 
+[include file=../includes/nav.inc]
+
+
+[search db=../databases/category.db&EQSTATUSdata=1]
+  Gallery
+	
+		[founditems]
+			<a href="[thisurl]?var=[sku]">[title]</a> 
+			
+		[/founditems]
+
+[/search]
+
+
+<hr>
+
+<div class="galleryicons">
+[search db=../databases/gallery.db&EQr_categoriesdata=[var]]
+  Gallery
+	
+		[founditems]
+			<a href="[thisurl]?var=[sku]"><img src="[title]"></a> 
+			
+		[/founditems]
+
+[/search]
+	
+		
+    </div>
+
+
+[search db=../databases/imgcategory.db&EQstatusDATA=1]
+<a href="[thisurl]?catsku=[sku]&catfolder=[title]">
+[/search]
+
+[search db=../databases/galleryimages.db&eqR_imgcategoryDATArq=[catsku]&eqSTATUSdatarq=1]
+[/search]
+[search db=../databases/galleryimages.dbeqSKUdatarq=[imagesku]]
+[/search]
+
+
+ 
+
+
+
+
+<br>
+
+
+[include file=../includes/footer.inc]
+
+</html>
+[flushdatabases]

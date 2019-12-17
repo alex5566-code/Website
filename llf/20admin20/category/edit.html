@@ -1,0 +1,30 @@
+[showif [replacevar]=yes]
+[replace db=[mydb]category.db&eqSKUdata=[skuvar]]title=[title]&title=[title]&code=[code][/replace]
+[redirect index.html]
+[/showif]
+
+[search db=[mydb]category.db&eqSKUdata=[skuvar]] 
+[founditems]
+
+<h1>Category Edit Form</h1>
+
+<form method="post" action="[thisurl]">
+<input type="hidden" name="skuvar" value="[sku]">
+<input type="hidden" name="replacevar" value="yes">
+Category Name: <input type="title" name="title" value="[title]"><br>
+
+Status: <br>
+<select name="Status">
+<option value="1" [showif [status]=1]selected[/showif] Status=Enabled>
+<option value="0" [showif [status]=0]selected[/showif] Status=Disabled>
+[showif [sku]=[title]] <option value="[sku]" selected> [title] </option> [/showif]
+[showif [sku]![title]] <option value="[sku]"> [title] </option> [/showif] 
+
+
+
+
+<input type="submit" value="Edit Category">
+</form>
+[/founditems]
+[/search]
+[flushdatabases]

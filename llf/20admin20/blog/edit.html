@@ -1,0 +1,12 @@
+[showif [appendvar]=yes]
+[replace db=../../databases/blog.db&eqSKUdata=[skuvar]]title=[title][/replace]
+[redirect index.html]
+[/showif]
+
+<h1>Blog Edit Form</h1>
+<form method="post" action="[thisurl]">
+<input type="hidden" name="skuvar" value="[sku]">
+<input type="hidden" name="replacevar" value="yes">
+Blog Name: <input type="title" name="title" value="[title]"<br>
+<input type="submit" value="Edit Blog">
+</form>
